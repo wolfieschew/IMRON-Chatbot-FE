@@ -1,0 +1,42 @@
+.chat-input-form {
+  display: flex;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.chat-input {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #e1e8ed;
+  border-radius: 20px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.chat-input:focus {
+  border-color: #3498db;
+}
+
+.send-button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 500;
+}
+
+.send-button:hover:not(:disabled) {
+  background-color: #b91c1c;
+}
+
+.send-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
