@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+# App.jsx
+
+<!-- import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import ChatMessage from './components/ChatMessage';
 import ChatInput from './components/ChatInput';
@@ -9,7 +11,6 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const selectedLanguage = 'indonesia';
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -23,12 +24,14 @@ function App() {
   const handleSendMessage = async (text) => {
     if (!text.trim()) return;
     
+
     const userMessage = { text, sender: 'user', timestamp: new Date() };
     setMessages(prevMessages => [...prevMessages, userMessage]);
     
     setLoading(true);
     try {
-      const response = await sendMessage(text, selectedLanguage);
+
+      const response = await sendMessage(text);
       
       const botMessage = { 
         text: response.answer || "Sorry, I couldn't process that request.", 
@@ -66,7 +69,7 @@ function App() {
       <div className={`chat-modal ${isChatOpen ? 'open' : ''}`}>
         <div className="chat-modal-header">
           <h1>RAG-Powered IMRON-Chatbot</h1>
-          <p className="subtitle">Under Development by Bagas V0.5</p>
+          <p className="subtitle">Under Development by Bagas V0.1</p>
           <button className="close-button" onClick={toggleChat}>×</button>
         </div>
         <div className="chat-modal-body">
@@ -81,17 +84,14 @@ function App() {
               <ChatMessage key={index} message={message} />
             ))}
             {loading && (
-                <div className="message bot-message loading">
-                  <div className="typing-bubble">
-                    <span className="typing-text">mengetik</span>
-                    <span className="typing-dots">
-                      <span className="dot dot1"></span>
-                      <span className="dot dot2"></span>
-                      <span className="dot dot3"></span>
-                    </span>
-                  </div>
+              <div className="message bot-message loading">
+                <div className="loading-indicator">
+                  <div className="dot"></div>
+                  <div className="dot"></div>
+                  <div className="dot"></div>
                 </div>
-              )}
+              </div>
+            )}
             <div ref={messagesEndRef} />
           </div>
           <ChatInput onSendMessage={handleSendMessage} disabled={loading} />
@@ -101,4 +101,27 @@ function App() {
   );
 }
 
-export default App;
+export default App; -->
+
+
+
+
+
+
+
+# Api.js
+
+
+<!-- // import axios from 'axios';
+
+// const API_URL = 'http://127.0.0.1:5000/api';
+
+// export const sendMessage = async (text) => {
+//   try {
+//     const response = await axios.post(`${API_URL}/chat`, { query: text });
+//     return response.data;
+//   } catch (error) {
+//     console.error('API Error:', error);
+//     throw error;
+//   }
+// }; -->
