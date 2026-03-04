@@ -1,36 +1,70 @@
 .message {
   display: flex;
-  margin-bottom: 15px;
+  align-items: flex-end;
+  gap: 6px;
+  margin-bottom: 10px;
   max-width: 100%;
 }
 
 .user-message {
+  flex-direction: row;          
+  justify-content: flex-end;  
   align-self: flex-end;
-  justify-content: flex-end;
 }
 
 .bot-message {
+  flex-direction: row;
   align-self: flex-start;
 }
 
+.message-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  align-self: flex-end;   
+}
+
+.message-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bot-avatar {
+  background-color: #f3f4f6;
+}
+
+.user-avatar {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
 .message-bubble {
-  padding: 0px 15px;
+  padding: 8px 12px;
   border-radius: 18px;
   position: relative;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  max-width: calc(100% - 40px);
+  word-break: break-word;
 }
 
 .user-message .message-bubble {
   background-color: #dc2626;
-  opacity: 0.8;
   color: white;
-  border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 4px;
 }
 
 .bot-message .message-bubble {
   background-color: #ecf0f1;
   color: #34495e;
-  border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 4px;
 }
 
 .error .message-bubble {
@@ -39,19 +73,18 @@
 }
 
 .message-content {
-  margin-bottom: 5px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 3px;
 }
 
 .message-timestamp {
-  font-size: 0.7rem;
-  opacity: 0.7;
-  margin-bottom: 5px;
+  font-size: 0.65rem;
+  opacity: 0.65;
   text-align: right;
 }
 
-.sources-section {
-  margin-top: 10px;
-}
+.sources-section { margin-top: 8px; }
 
 .sources-toggle {
   background: none;
@@ -60,55 +93,37 @@
   text-decoration: underline;
   cursor: pointer;
   padding: 0;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   opacity: 0.8;
 }
 
-.user-message .sources-toggle {
-  color: #ffffff;
-}
-
-.bot-message .sources-toggle {
-  color: #2c3e50;
-}
-
 .sources {
-  margin-top: 10px;
-  font-size: 0.8rem;
+  margin-top: 8px;
+  font-size: 0.75rem;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding-top: 8px;
+  padding-top: 6px;
 }
 
 .sources ul {
   margin: 0;
-  padding-left: 15px;
+  padding-left: 12px;
   list-style-type: none;
 }
 
-.sources li {
-  margin-bottom: 8px;
-}
+.sources li { margin-bottom: 6px; }
 
 .source-item {
   background-color: rgba(0, 0, 0, 0.05);
-  padding: 8px;
+  padding: 6px 8px;
   border-radius: 6px;
 }
 
-.bot-message .source-item {
-  background-color: rgba(0, 0, 0, 0.05);
-}
+.user-message .source-item { background-color: rgba(255, 255, 255, 0.2); }
 
-.user-message .source-item {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.source-content {
-  margin-bottom: 4px;
-}
+.source-content  { margin-bottom: 3px; }
 
 .similarity-score {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   text-align: right;
   opacity: 0.7;
 }
