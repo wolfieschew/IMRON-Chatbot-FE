@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const API_URL = "https://194.163.145.39/api";
-const API_URL = "http://127.0.0.1:5006/api";
+// const API_URL = "https://[IP_ADDRESS]/api"; // production environtment
+const API_URL = "http://[IP_ADDRESS]/api";
 
 export const sendMessage = async (text) => {
   try {
@@ -14,32 +14,3 @@ export const sendMessage = async (text) => {
     throw error;
   }
 };
-
-// export const sendMessage = async (text, language = 'indonesia') => {
-//   try {
-//     const response = await axios.post(`${API_URL}/query`, {
-//       question: text,
-//       language: language
-//     });
-//     return response.data;
-//   } catch (error) {
-//     console.error('API Error:', error);
-//     throw error;
-//   }
-// };
-
-// Backup
-
-// import axios from 'axios';
-
-// const API_URL = 'http://127.0.0.1:5000/api';
-
-// export const sendMessage = async (text) => {
-//   try {
-//     const response = await axios.post(`${API_URL}/chat`, { query: text });
-//     return response.data;
-//   } catch (error) {
-//     console.error('API Error:', error);
-//     throw error;
-//   }
-// };

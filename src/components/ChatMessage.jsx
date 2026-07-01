@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ChatMessage.css";
 
-// Kecepatan typing: jumlah karakter per tick (ms)
-const TYPING_SPEED_MS = 60; // delay antar karakter (ms)
+const TYPING_SPEED_MS = 60;
 
 const ChatMessage = ({ message }) => {
   const {
@@ -13,12 +12,9 @@ const ChatMessage = ({ message }) => {
     isTyping: isLoadingTyping,
   } = message;
 
-  // isLoadingTyping = true  => bubble "..." (sedang menunggu respons API)
-  // sender === "bot" & teks ada => jalankan typing effect
   const isBot = sender === "bot";
 
   const [displayedText, setDisplayedText] = useState(
-    // Jika bukan bot, langsung tampilkan semua teks (pesan user)
     isBot ? "" : text,
   );
   const [isDoneTyping, setIsDoneTyping] = useState(!isBot);
@@ -26,7 +22,6 @@ const ChatMessage = ({ message }) => {
   const timerRef = useRef(null);
 
   useEffect(() => {
-    // Reset saat teks berubah (misal stream baru)
     if (!isBot || isLoadingTyping) return;
 
     indexRef.current = 0;
@@ -46,7 +41,6 @@ const ChatMessage = ({ message }) => {
     timerRef.current = setTimeout(type, TYPING_SPEED_MS);
 
     return () => clearTimeout(timerRef.current);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text, isLoadingTyping]);
 
   const formattedTime = new Intl.DateTimeFormat("id-ID", {
@@ -54,12 +48,11 @@ const ChatMessage = ({ message }) => {
     minute: "numeric",
   }).format(timestamp);
 
-  // Bubble loading "..." (menunggu respons dari API)
   if (isLoadingTyping) {
     return (
       <div className={`message bot-message loading`}>
         <div className="message-avatar bot-avatar">
-          {message.botAvatar ? <img src={message.botAvatar} alt="bot" /> : null}
+          <img src={message.botAvatar || "/public/imron.png"} alt="bot" />
         </div>
         <div className="typing-bubble">
           <span className="typing-text">Mengetik</span>
@@ -75,13 +68,12 @@ const ChatMessage = ({ message }) => {
 
   return (
     <div
-      className={`message ${isBot ? "bot-message" : "user-message"} ${
-        isError ? "error" : ""
-      }`}
+      className={`message ${isBot ? "bot-message" : "user-message"} ${isError ? "error" : ""
+        }`}
     >
       {isBot && (
         <div className="message-avatar bot-avatar">
-          {message.botAvatar ? <img src={message.botAvatar} alt="bot" /> : null}
+          <img src={message.botAvatar || "/public/imron.png"} alt="bot" />
         </div>
       )}
 

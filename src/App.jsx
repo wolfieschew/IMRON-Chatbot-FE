@@ -6,11 +6,14 @@ import { sendMessage } from "./services/api";
 import { LuBotMessageSquare } from "react-icons/lu";
 
 const EXAMPLE_QUESTIONS = [
-  "sebutkan total transaksi dari data enose",
-  "Tampilkan data sensor terbaru",
-  "Berapa jumlah objek yang terdeteksi hari ini?",
-  "Bagaimana alur sistem dari input sampai output?",
-  "Apa penyebab nilai sensor tiba-tiba naik?",
+  "Sebutkan total data dari data e-nose",
+  "sebutkan total keseluruan objek objek deteksi yang terecord",
+  "sebutkan jumlah total distribusi data e-nose yang label multiclass nya itu sama dengan E",
+  "tampilkan perbandingan total objek deteksi dengan label mahasiswa dan juga label dosen",
+  "tolong tampilkan rincian total data dari masing masing label multiclass pada data e-nose yang terecord",
+  "sebutkan jumlah deteksi objek dengan label mahasiswa pada hari ini",
+  "sebutkan total deteksi data e-nose pada hari ini",
+  "sebutkan total data e-nose pada hari ini, lengkap beserta dengan nilai kualitas, score dan juga kategori nya",
 ];
 
 function App() {
@@ -113,7 +116,7 @@ function App() {
           />
           <div className="chat-header-info">
             <h1>IMRON-Chatbot</h1>
-            <p className="subtitle">Developed by KK-AITM Research</p>
+            <p className="subtitle">Develop with Curiousity by KK-AITM Research</p>
           </div>
 
           <button

@@ -40,9 +40,11 @@
     transform: scale(1.1);
     background-color: var(--primary-hover);
 }
+
 .chat-button:active {
     transform: scale(0.95);
 }
+
 .chat-button.hidden {
     transform: scale(0);
     opacity: 0;
@@ -58,7 +60,7 @@
     position: fixed;
     bottom: 82px;
     right: 20px;
-    width: 350px;
+    width: 450px;
     height: 520px;
     max-height: calc(100vh - 110px);
     border-radius: var(--border-radius-md);
@@ -338,19 +340,23 @@
 .typing-dots .dot1 {
     animation-delay: 0s;
 }
+
 .typing-dots .dot2 {
     animation-delay: 0.2s;
 }
+
 .typing-dots .dot3 {
     animation-delay: 0.4s;
 }
 
 @keyframes blink {
+
     0%,
     80%,
     100% {
         opacity: 0.6;
     }
+
     40% {
         opacity: 1;
     }
